@@ -1,6 +1,6 @@
 ![lotto xah image](https://github.com/user-attachments/assets/69259f2d-785e-4f37-805d-368f8ceec0d5)
 
-# Lotto XAH, a lottery game Hook on the Xahau JSHooks Testnet Network
+# Lotto XAH, a lottery game Hook on the Xahau JSHooks Testnet
 
 
 ## Introduction
