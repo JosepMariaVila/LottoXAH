@@ -4,16 +4,16 @@ import {ttPAYMENT, ttINVOKE} from "tts.ts";
 
 export const Hook = () => {
 
-    // Create a reserve for 2 outgoing transactions
+    // Create a reserve for 1 outgoing transaction
     etxn_reserve(1)
 
-    // Check hook account                              hook_accid
+    // Check hook account                              
     const hookAccount=hook_account() as number[]
 
-    // Check the sender of the initial                  txn acc_id
+    // Check the sender of the initial                  
     const sender=otxn_field(sfAccount) as number[]
 
-    // Check destination of the initial txn             account_field
+    // Check destination of the initial txn            
     const destination = otxn_field(sfDestination) as number[]
 
     // Checking if hookAccount and destination are the same
@@ -31,8 +31,6 @@ export const Hook = () => {
     // FUNDS is translated to HEX like 46554E44, we add 0x each 2 digits
     const fund_param = [0x46, 0x55, 0x4E, 0x44]
     
-    // P1LG is translated to HEX like 50314C47
-    // const p1ledger_param = [0x50, 0x31, 0x4C, 0x47]
     // P1OR (PLAYER 1 ORDER) is translated to HEX like 50314F52
     const player1order = [0x50, 0x31, 0x4F, 0x52]
     // PXOR (PLAYER X ORDER) is translated to HEX like ... (P2OR, P3OR, P4OR, P5OR, P6OR, P7OR, P8OR, P9OR, P10O )
@@ -46,8 +44,6 @@ export const Hook = () => {
     const player9order = [0x50, 0x39, 0x4F, 0x52]
     const player10order = [0x50, 0x31, 0x30, 0x4F]
 
-    // P1AD is translated to HEX like 50314144
-    // const p1address_param = [0x50, 0x31, 0x41, 0x44]
     // P1AD (PLAYER 1 ADDRESS) is translated to HEX like 50314144
     const player1address = [0x50, 0x31, 0x41, 0x44]
     // PXAD (PLAYER X ADDRESS) is translated to HEX like ... (P2AD, P3AD, P4AD, P5AD, P6AD, P7AD, P8AD, P9AD, P10A)
@@ -102,7 +98,6 @@ export const Hook = () => {
     const players_equal7 = JSON.stringify(p7address_ns) == JSON.stringify(sender) ? 1 : 0
     const players_equal8 = JSON.stringify(p8address_ns) == JSON.stringify(sender) ? 1 : 0
     const players_equal9 = JSON.stringify(p9address_ns) == JSON.stringify(sender) ? 1 : 0
-    //const players_equal10 = JSON.stringify(p10address_ns) == JSON.stringify(sender) ? 1 : 0
 
     //Check json Txn
     const txn = otxn_json() as Transaction
@@ -115,6 +110,7 @@ export const Hook = () => {
         state_set(fundaddress_hp, fund_param)
         accept("LOTTO XAH: Adding fund account.", 1)
     }
+    
     //I want to allow the fund account send payments and receiving from hook account, sender_equal and destination_equal check if the account is the FUND one stored in our namespace.
     if (tt==ttPAYMENT && ( sender_equal || destination_equal)) {
         accept("LOTTO XAH: Funding account payment.", 2)
@@ -124,6 +120,7 @@ export const Hook = () => {
     if (tt==ttPAYMENT && typeof txn.Amount.length === "undefined"){
         rollback("LOTTO XAH: Not accepting IOUs or transaction type.", 3);
     } 
+    
     // We keep the amount of XAH for later
     const drops_sent = txn.Amount
     
