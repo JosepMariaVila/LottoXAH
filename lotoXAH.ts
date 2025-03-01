@@ -74,16 +74,16 @@ export const Hook = () => {
     const p10address_ns = state(player10address)
     
     // The order number
-    const numberOrder0 = [0x30];
-    const numberOrder1 = [0x31];
-    const numberOrder2 = [0x32];
-    const numberOrder3 = [0x33];
-    const numberOrder4 = [0x34];
-    const numberOrder5 = [0x35];
-    const numberOrder6 = [0x36];
-    const numberOrder7 = [0x37];
-    const numberOrder8 = [0x38];
-    const numberOrder9 = [0x39];
+    const numberOrder0 = [0x30]
+    const numberOrder1 = [0x31]
+    const numberOrder2 = [0x32]
+    const numberOrder3 = [0x33]
+    const numberOrder4 = [0x34]
+    const numberOrder5 = [0x35]
+    const numberOrder6 = [0x36]
+    const numberOrder7 = [0x37]
+    const numberOrder8 = [0x38]
+    const numberOrder9 = [0x39]
     
     // Get FUND Address from namespace
     const fundaddress_ns=state(fund_param)
@@ -185,8 +185,8 @@ export const Hook = () => {
     if (equal && p10address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && p4address_ns.length == 20 && p5address_ns.length == 20 && p6address_ns.length == 20 && p7address_ns.length == 20 && p8address_ns.length == 20 && p9address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && !players_equal4 && !players_equal5 && !players_equal6 && !players_equal7 && !players_equal8 && !players_equal9 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder9, player10order)
         state_set(sender, player10address)
-        //accept("LOTTO XAH: Saving Player 1. Player 1 has position number 0. If Player 10 Ledger Index last digit is the number 0, then you win 100 XAH!", 4)
-    //}
+        //accept("LOTTO XAH: Saving Player 10. Player 10 has position number 9. If the Ledger Index last digit of the transaction you just sent is the number 9, then you win 100 XAH!", 4)
+    }
 
     // Once we have 10 players...
     
@@ -196,131 +196,130 @@ export const Hook = () => {
     trace("Ledger Index Number: ", seq, 0);
     trace("Last Digit: ", lastDigit, 1);
 
-        // If P1 Wins, we send 100 XAH to him
-        if(lastDigit == 0){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p1address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        //If P2 Wins, we send 100 XAH to him
-        if(lastDigit == 1){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p2address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P3 Wins, we send 100 XAH to him
-        if(lastDigit == 2){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p3address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P4 Wins, we send 100 XAH to him
-        if(lastDigit == 3){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p4address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P5 Wins, we send 100 XAH to him
-        if(lastDigit == 4){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p5address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P6 Wins, we send 100 XAH to him
-        if(lastDigit == 5){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p6address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P7 Wins, we send 100 XAH to him
-        if(lastDigit == 6){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p7address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P8 Wins, we send 100 XAH to him
-        if(lastDigit == 7){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p8address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P9 Wins, we send 100 XAH to him
-        if(lastDigit == 8){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p9address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-        // If P10 Wins, we send 100 XAH to him
-        if(lastDigit == 9){
-            //Let's create the outgoing payment
-            const prepared_txn = prepare({
-                TransactionType: "Payment",
-                Destination: util_raddr(p10address_ns),
-                Amount: parseFloat(drops_sent)*10
-            })
-            const emit_result01=emit(prepared_txn)
-        }
-
-        //Deleting players values from namespace, so we can restart the game later
-        state_set(null,player1order)
-        state_set(null,player1address)
-        state_set(null,player2order)
-        state_set(null,player2address)
-        state_set(null,player3order)
-        state_set(null,player3address)
-        state_set(null,player4order)
-        state_set(null,player4address)
-        state_set(null,player5order)
-        state_set(null,player5address)
-        state_set(null,player6order)
-        state_set(null,player6address)
-        state_set(null,player7order)
-        state_set(null,player7address)
-        state_set(null,player8order)
-        state_set(null,player8address)
-        state_set(null,player9order)
-        state_set(null,player9address)
-        state_set(null,player10order)
-        state_set(null,player10address)
-        accept("LOTTO XAH: We have a winner! 100 XAH sent! End of the game!", 3)
+    // If P1 Wins, we send 100 XAH to him
+    if(lastDigit == 0){
+        //Let's create the outgoing payment
+         const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p1address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
     }
-    
+    //If P2 Wins, we send 100 XAH to him
+    if(lastDigit == 1){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p2address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P3 Wins, we send 100 XAH to him
+    if(lastDigit == 2){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p3address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P4 Wins, we send 100 XAH to him
+    if(lastDigit == 3){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p4address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P5 Wins, we send 100 XAH to him
+    if(lastDigit == 4){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p5address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+         const emit_result01=emit(prepared_txn)
+    }
+    // If P6 Wins, we send 100 XAH to him
+    if(lastDigit == 5){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p6address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P7 Wins, we send 100 XAH to him
+    if(lastDigit == 6){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p7address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P8 Wins, we send 100 XAH to him
+    if(lastDigit == 7){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p8address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P9 Wins, we send 100 XAH to him
+    if(lastDigit == 8){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p9address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+        const emit_result01=emit(prepared_txn)
+    }
+    // If P10 Wins, we send 100 XAH to him
+    if(lastDigit == 9){
+        //Let's create the outgoing payment
+        const prepared_txn = prepare({
+            TransactionType: "Payment",
+            Destination: util_raddr(p10address_ns),
+            Amount: parseFloat(drops_sent)*10
+        })
+            const emit_result01=emit(prepared_txn)
+    }
+
+    //Deleting players values from namespace, so we can restart the game later
+    state_set(null,player1order)
+    state_set(null,player1address)
+    state_set(null,player2order)
+    state_set(null,player2address)
+    state_set(null,player3order)
+    state_set(null,player3address)
+    state_set(null,player4order)
+    state_set(null,player4address)
+    state_set(null,player5order)
+    state_set(null,player5address)
+    state_set(null,player6order)
+    state_set(null,player6address)
+    state_set(null,player7order)
+    state_set(null,player7address)
+    state_set(null,player8order)
+    state_set(null,player8address)
+    state_set(null,player9order)
+    state_set(null,player9address)
+    state_set(null,player10order)
+    state_set(null,player10address)
+    accept("End of the game! Check the winner in the explorer.", 3)
+
     rollback("LOTTO XAH: Not accepting this transaction.", 5)
     
     return 0
