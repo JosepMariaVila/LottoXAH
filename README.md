@@ -1,16 +1,14 @@
 ![lotto xah image](https://github.com/user-attachments/assets/69259f2d-785e-4f37-805d-368f8ceec0d5)
 
-# Lotto XAH, a lottery game Hook 
+# Lotto XAH, a lottery game Hook on the Xahau JSHooks Testnet Network
 
 
 ## Introduction
 
-Lotto XAH is a hook programmed in javascript for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players. Each player sends 10 XAH to the hook and the winner gets the prize which consists in all the amounts combined: 100 XAH.
+Lotto XAH is a hook programmed in javascript for the Xahau JSHooks Testnet Network. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players. Each player sends 10 XAH to the hook and the winner gets the prize which consists in all the amounts combined: 100 XAH.
 
 
 ## Explanation
-
-**Attention:** Only use if you are sure of what you are doing on Testnet/Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
 
 The hook assigns an ordered number from 0 to 9 to each player that joins the lottery and stores its number and its address in the namespace. A player joins the lottery sending 10 XAH to the hook account. The hook uses the Ledger Index of the last player (Player 10) payment transaction to determine the winner: it considers the last digit of the Ledger_Index field of the payment transaction, which is a number from 0 to 9, and that number determines the winner:
 
@@ -48,7 +46,7 @@ Once the hook is installed, the following triggers are expected for the hook.
 - An Invoke transaction from the hook account with the hook parameter “FUND” and the desired address as value in HEX format. This will store in the namespace the information with the key “FUND” and with value the address in HEX.
 
 
-## How to install Lotto XAH Hook on Testnet?
+## How to install Lotto XAH Hook on Xahau JSHooks Testnet?
 
 - HookHash:                         6DBC3AFDDB5C4F79EAE7B56198CD8ED109FD05219B419F71073B9F81A444CBFC
 
@@ -57,11 +55,13 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## I want to try them without installing anything
 
-You can try this hook just sending 10 XAH to the following account on TESTNET and wait until 9 more players enter the game and see who wins (or you can create some accounts on testnet, for example, using the JSHooksBuilder https://jshooks-builder.xahau.network/develop and send yourself 10 XAH from different accounts to see who wins):
+You can try this hook just sending 10 XAH to the following account on Xahau JSHooks Testnet and wait until 9 more players enter the game and see who wins. You can do it by sending 10 XAH from one or several accounts using the JSHooksBuilder: 
 
-- Testnet hook account:             rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
+https://jshooks-builder.xahau.network/develop 
+
+- JSHooks Testnet hook account:              rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
   
-- Testnet hook account QR code:     https://jshooks.xahauexplorer.com/explorer/rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
+- JSHooks Testnet hook account explorer:     https://xahau-jshooks-testnet.xrplwin.com/account/rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
 
 
 ## Credits
