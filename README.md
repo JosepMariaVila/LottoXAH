@@ -1,64 +1,67 @@
-![Green Cartoon Animated Memory Game Presentation](https://github.com/user-attachments/assets/19dc52d0-4c68-4fb8-8017-7a7dcb0bba18)
+![lotto xah image](https://github.com/user-attachments/assets/69259f2d-785e-4f37-805d-368f8ceec0d5)
 
+# Lotto XAH, a lottery game Hook 
 
-# Odds or Evens, a game Hook 
 
 ## Introduction
 
-Odds or Evens is a hook programmed in C for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, considered the smart contracts of Xahau. 
-
-Odds or Evens is a Hook that converts a Xahau account in an engine for a simple game. One player will hava an Odd or and Even number based on the ledger index sequence of the payment he sent. Next player will have an Odd or an Even number based on the ledger index sequence ledger of the payment he sent. 
-
-This hook is based in the Highest Number Hook by @ekiserrepe. That hook had an undesirable thing, the range between numbers where in some cases predictable, for example, if first player had a 0 or 1, then there were high chances the second player was able to win because, 2, 3, 4, 5, 6, 7, 8 and 9 would win him. So I thought this should be reduced to a range of 2 options, this way the result would be less predictable. A way to do so is reduce the ledger sequence number to an odd or even number or to its corresponding remainders when they are divided by 2. The result of dividing the ledger index sequence by 2 is 0 for even numbers, or 1 for odd numbers.
-
-But who wins?
-
-If the first player has a remainder of 0 and the second player a remainder of 0, the first player wins. 
-
-If the first player has a remainder of 0 and the second player a remainder of 1, the second player wins. 
-
-If the first player has a remainder of 1 and the second player a remainder of 1, the first player wins. 
-
-If the first player has a remainder of 1 and the second player a remainder of 0, the second player wins. 
-
-These rules can be sumarized like this:
-Compare the remainders of both players regarding being odd or even, if they are equal, first player wins, if they are different, second player wins.
+Lotto XAH is a hook programmed in javascript for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players.
 
 
 ## Explanation
 
 **Attention:** Only use if you are sure of what you are doing on Testnet/Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
 
-The hook when installed allows you to play the game of the odds or evens numbers. The hook will accept two players sending 1 XAH. With each payment the hook will check the ledger index sequence. The hook will check if it's an odd or even number and store the remainder of the division in the namespace next to the address of the first player referring to the first payment he receives. When a second player sends a payment of 1 XAH to the hook address, the hook will check the ledger index sequence and compare the remainder with that of the first player. This can lead to 2 possible outcomes. Both have the same remainder or a different one. If both have the same remainder, Player 1 wins and receives 2 XAH. If both players have a different remainder, Player 2 wins and receives 2 XAH. 
+The hook assigns an ordered number from 0 to 9 to each player that joins the lottery and stores its number and its address in the namespace. A player joins the lottery sending 10 XAH to the hook account. The hook uses the Ledger Index of the last player (Player 10) payment transaction to determine the winner: it considers the last digit of the Ledger_Index field of the payment transaction, which is a number from 0 to 9, and that number determines the winner:
 
-The hook blocks any payment other than 1 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
+If Player 10 Ledger_Index last digit is 0, then Player 1, which has assigned number 0, wins.
+
+If Player 10 Ledger_Index last digit is 1, then Player 2, which has assigned number 1, wins.
+
+If Player 10 Ledger_Index last digit is 2, then Player 3, which has assigned number 2, wins.
+
+If Player 10 Ledger_Index last digit is 3, then Player 4, which has assigned number 3, wins.
+
+If Player 10 Ledger_Index last digit is 4, then Player 5, which has assigned number 4, wins.
+
+If Player 10 Ledger_Index last digit is 5, then Player 6, which has assigned number 5, wins.
+
+If Player 10 Ledger_Index last digit is 6, then Player 7, which has assigned number 6, wins.
+
+If Player 10 Ledger_Index last digit is 7, then Player 8, which has assigned number 7, wins.
+
+If Player 10 Ledger_Index last digit is 8, then Player 9, which has assigned number 8, wins.
+
+If Player 10 Ledger_Index last digit is 9, then Player 10, which has assigned number 9, wins.
+
+The hook blocks any payment other than 10 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
 
 
 ## Installation & Usage
 
 Once the hook is installed, the following triggers are expected for the hook.
 
-- An account will send a payment of 1 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the odd or even number of the ledger sequence in the namespace under the key P1LG.
+- An account will send a payment of 10 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the assigned ordered number from 0 to 9 with the key P1OR.
 
-- A second account (different from the first one) will send a payment of 1 XAH to the hook account. The payment account will be known as Player 2. The hook will compare the oddeness or eveness of the ledger index sequence number with that of Player 1 and decide the final result of the game.
+- The next 9 accounts that send 10 XAH to the hook will follow the same process. Payment accounts will be known as Player 2, Player 3, Player 4, Player 5, Player 6, Player 7, Player 8, Player 9 and Player 10. The hook will register in the namespace of the players their addresses with the corresponding keys P1AD, P2AD, P3AD, P4AD, P5AD, P6AD, P7AD, P8AD, P9AD, P10A.
 
 - An Invoke transaction from the hook account with the hook parameter “FUND” and the desired address as value in HEX format. This will store in the namespace the information with the key “FUND” and with value the address in HEX.
 
 
 ## How to install the Odds or Evens Hook on Testnet?
 
-HookHash: 89E9C5B8F04BD9C23AA0299573B0EBC43091AEBB5AFC90D4A353020A00CEFDE7
+HookHash: ,,,
 
 1. You can do it by [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
    
 
 ## I want to try them without installing anything
 
-You can try this hook just sending 1 XAH to the following account on TESTNET and wait until somebody else sends 1 XAH to it and see who wins (or you can just create a second account on testnet and send yourself 1 XAH from this different account and see who wins):
+You can try this hook just sending 10 XAH to the following account on TESTNET and wait until 9 more players enter the game and see who wins (or you can just create 9 more accounts on testnet, for exampel using the JSHooksBuilder https://jshooks-builder.xahau.network/develop and send yourself 10 XAH from all the different accounts to see who wins):
 
-- Testnet hook account:   r9uM7PHEYvMqBQsuFzAany9xucXfrQsLDr
+- Testnet hook account:   ,,,
 
 
 ## Credits
 
-This hook was originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
+This structure of this hook was originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
