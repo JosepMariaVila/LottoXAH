@@ -50,18 +50,20 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## How to install the Odds or Evens Hook on Testnet?
 
-HookHash: ,,,
+HookHash:                    6DBC3AFDDB5C4F79EAE7B56198CD8ED109FD05219B419F71073B9F81A444CBFC
 
-1. You can do it by [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
+1. You can install it using: [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
    
 
 ## I want to try them without installing anything
 
 You can try this hook just sending 10 XAH to the following account on TESTNET and wait until 9 more players enter the game and see who wins (or you can just create 9 more accounts on testnet, for exampel using the JSHooksBuilder https://jshooks-builder.xahau.network/develop and send yourself 10 XAH from all the different accounts to see who wins):
 
-- Testnet hook account:   ,,,
+- Testnet hook account:             rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
+- Testnet hook account QR code:     https://jshooks.xahauexplorer.com/explorer/rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
 
 
 ## Credits
 
 This structure of this hook was originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
+Thanks to @ekiserrepe and @dangell7 for their advises in the matter.
