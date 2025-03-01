@@ -2,7 +2,6 @@
 import {sfAccount, sfDestination} from "sfcodes.ts";
 import {ttPAYMENT, ttINVOKE} from "tts.ts";
 
-
 export const Hook = () => {
 
     // Create a reserve for 2 outgoing transactions
@@ -191,7 +190,7 @@ export const Hook = () => {
 
     // Once we have 10 players...
     
-    //Get ledger sequence
+    //Get ledger sequence which determines the winner. Player 10 Ledger_Index last digit (it's a number from 0 to 9) shows the number-player that will win the lottery.
     const seq = ledger_seq()
     const lastDigit = seq % 10
     trace("Ledger Index Number: ", seq, 0);
