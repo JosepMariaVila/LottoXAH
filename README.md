@@ -41,9 +41,9 @@ The hook blocks any payment other than 10 XAH. So a third case could occur, that
 
 Once the hook is installed, the following triggers are expected for the hook.
 
-- An account will send a payment of 10 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the assigned ordered number from 0 to 9 with the key P1OR.
+- An account will send a payment of 10 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace Player 1 address with the key P1AD and store the assigned ordered number from 0 to 9, in this case number 0, with the key P1OR.
 
-- The next 9 accounts that send 10 XAH to the hook will follow the same process. Payment accounts will be known as Player 2, Player 3, Player 4, Player 5, Player 6, Player 7, Player 8, Player 9 and Player 10. The hook will register in the namespace of the players their addresses with the corresponding keys P1AD, P2AD, P3AD, P4AD, P5AD, P6AD, P7AD, P8AD, P9AD, P10A.
+- The next 9 accounts that send 10 XAH to the hook will follow the same process. Payment accounts will be known as Player 2, Player 3, Player 4, Player 5, Player 6, Player 7, Player 8, Player 9 and Player 10. The hook will register in the namespace players addresses with keys P2AD, P3AD, P4AD, P5AD, P6AD, P7AD, P8AD, P9AD and P10A. It also will assign the corresponding ordered numbers 2, 3, 4, 5, 6, 7, 8 and 9 and store them in the namespace with the corresponding keys P2OR, P3OR, P4OR, P5OR, P6OR, P7OR, P8OR, P9OR and P10O.
 
 - An Invoke transaction from the hook account with the hook parameter “FUND” and the desired address as value in HEX format. This will store in the namespace the information with the key “FUND” and with value the address in HEX.
 
