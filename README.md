@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Lotto XAH is a hook programmed in javascript for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players.
+Lotto XAH is a hook programmed in javascript for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players. Each player sends 10 XAH to the hook and the winner gets the prize which consists in all the amounts combined: 100 XAH.
 
 
 ## Explanation
