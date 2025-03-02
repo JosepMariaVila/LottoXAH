@@ -315,7 +315,7 @@ export const Hook = () => {
     state_set(null,player9address)
     state_set(null,player10order)
     state_set(null,player10address)
-    accept("LOTTO XAH: Saving Player 10. Player 10 has position number 9. If Ledger Index last digit of this transaction is the number 9, then you win 100 XAH! If it is another number, you loss! End of the game. Check the data in the explorer to know the winner.", 3)
+    accept("LOTTO XAH: Saving Player 10. Player 10 has position number 9. If Ledger Index last digit of this transaction is the number 9, then you win 100 XAH! If it is another number, you lose! End of the game. Check the data in the explorer to know the winner.", 3)
 
     rollback("LOTTO XAH: Not accepting this transaction.", 5)
     
