@@ -66,5 +66,5 @@ https://jshooks-builder.xahau.network/develop
 
 ## Credits
 
-This structure of this hook was originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
+This hook is based on the Highest hook originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
 Thanks to @ekiserrepe and @dangell7 for their advises in the matter.
