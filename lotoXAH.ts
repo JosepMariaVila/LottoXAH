@@ -120,9 +120,14 @@ export const Hook = () => {
     if (tt==ttPAYMENT && typeof txn.Amount.length === "undefined"){
         rollback("LOTTO XAH: Not accepting IOUs or transaction type.", 3);
     } 
-    
+
     // We keep the amount of XAH for later
     const drops_sent = txn.Amount
+
+     // If payment it's not a 10 XAH payment, reject it
+    if (tt==ttPAYMENT && drops_sent!=10000000){
+        rollback("LOTTO XAH: Not accepting this transaction. You should send exactly 10 XAH, not more, not less.", 3);
+    }
     
     // If first player payment goes right, to check that, you need an incoming payment from another account (equal=1), it has to be a payment (tt==ttPAYMENT or tt==0), the amount has to be 10 XAH (drops_sent==10000000) and be the first player to enter to the game, no previous records of player in the namespace p1address_ns.length != 20
     if (equal && p1address_ns.length != 20 && tt==ttPAYMENT && drops_sent==10000000) {
