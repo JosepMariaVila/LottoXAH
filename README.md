@@ -48,7 +48,7 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## How to install Lotto XAH Hook on Xahau JSHooks Testnet?
 
-- HookHash:                         6DBC3AFDDB5C4F79EAE7B56198CD8ED109FD05219B419F71073B9F81A444CBFC
+- HookHash:                         4F8A6B2D9AEFD1B42577C70A718E10136E12A8EB7632EE92F60E5EEA4DFCBCDC
 
 - You can install it using:         [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
    
@@ -59,9 +59,9 @@ You can try this hook just sending 10 XAH to the following account on Xahau JSHo
 
 https://jshooks-builder.xahau.network/develop 
 
-- JSHooks Testnet hook account:              rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
+- JSHooks Testnet hook account:              rKgR2NguoTnvwVj2T44Av8TKwsx51kSssy
   
-- JSHooks Testnet hook account explorer:     https://xahau-jshooks-testnet.xrplwin.com/account/rU7nGb3K3WzU6BmRBZb52KB1mMXRbUWwuD
+- JSHooks Testnet hook account explorer:     https://xahau-jshooks-testnet.xrplwin.com/account/rKgR2NguoTnvwVj2T44Av8TKwsx51kSssy
 
 
 ## Credits
