@@ -293,7 +293,7 @@ export const Hook = () => {
         //Let's create the outgoing payment
         const prepared_txn = prepare({
             TransactionType: "Payment",
-            Destination: util_raddr(p10address_ns),
+            Destination: util_raddr(sender),
             Amount: parseFloat(drops_sent)*10
         })
             const emit_result01=emit(prepared_txn)
