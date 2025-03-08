@@ -84,7 +84,7 @@ export const Hook = () => {
     // Get FUND Address from namespace
     const fundaddress_ns=state(fund_param)
 
-    //Check if fundaddress is the origin payment account or the destination
+    // Check if fundaddress is the origin payment account or the destination
     const sender_equal = JSON.stringify(sender) == JSON.stringify(fundaddress_ns) ? 1 : 0
     const destination_equal = JSON.stringify(destination) == JSON.stringify(fundaddress_ns) ? 1 : 0
 
@@ -99,19 +99,19 @@ export const Hook = () => {
     const players_equal8 = JSON.stringify(p8address_ns) == JSON.stringify(sender) ? 1 : 0
     const players_equal9 = JSON.stringify(p9address_ns) == JSON.stringify(sender) ? 1 : 0
 
-    //Check json Txn
+    // Check json Txn
     const txn = otxn_json() as Transaction
 
     // Check there is a fund_param value
     const fundaddress_hp =otxn_param(fund_param)
 
-    //If i want to add the funding account
+    // If I want to add the funding account
     if (!equal && fundaddress_hp.length==20 && tt==ttINVOKE) {
         state_set(fundaddress_hp, fund_param)
         accept("LOTTO XAH: Adding fund account.", 1)
     }
     
-    //I want to allow the fund account send payments and receiving from hook account, sender_equal and destination_equal check if the account is the FUND one stored in our namespace.
+    // I want to allow the fund account send payments and receiving from hook account, sender_equal and destination_equal check if the account is the FUND one stored in our namespace.
     if (tt==ttPAYMENT && ( sender_equal || destination_equal)) {
         accept("LOTTO XAH: Funding account payment.", 2)
     }
@@ -192,11 +192,11 @@ export const Hook = () => {
 
     // Once we have 10 players...
     
-    //Get ledger sequence which determines the winner. Player 10 Ledger_Index last digit (it's a number from 0 to 9) shows the number-player that will win the lottery.
+    // Get ledger sequence which determines the winner. Player 10 Ledger_Index last digit (it's a number from 0 to 9) shows the number-player that will win the lottery.
     const seq = ledger_seq()
     const lastDigit = seq % 10
-    trace("Ledger Index Number: ", seq, 0);
-    trace("Last Digit: ", lastDigit, 1);
+    trace("Ledger Index Number", seq, 0);
+    trace("Last Digit", lastDigit, 1);
 
     // If P1 Wins, we send 100 XAH to him
     if(lastDigit == 0){
@@ -299,7 +299,7 @@ export const Hook = () => {
             const emit_result01=emit(prepared_txn)
     }
 
-    //Deleting players values from namespace, so we can restart the game later
+    // Deleting players values from namespace, so we can restart the game later
     state_set(null,player1order)
     state_set(null,player1address)
     state_set(null,player2order)
