@@ -64,6 +64,10 @@ https://jshooks-builder.xahau.network/develop
 - JSHooks Testnet hook account explorer:     https://xahau-jshooks-testnet.xrplwin.com/account/rnY1MgmsuY4FEzLtdFc9wZQKWpRbcQkaG3
 
 
+## Youtube video tutorial to see Lotto XAH Hook in action
+
+https://youtu.be/xVdBsYzDfdM?si=InLocBeiYarM17-Q
+
 ## Credits
 
 This hook is based on the Highest hook originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
