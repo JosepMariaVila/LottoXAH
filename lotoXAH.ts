@@ -1,6 +1,10 @@
 // README: https://github.com/JosepMariaVila/LottoXAH/blob/main/README.md
 import {sfAccount, sfDestination} from "sfcodes.ts";
 import {ttPAYMENT, ttINVOKE} from "tts.ts";
+/*const ttPAYMENT = 0
+const ttINVOKE = 99
+const sfAccount = 0x80001
+const sfDestination = 0x80003*/
 
 //export const Hook = () => {
 export const Hook: Hook = (tx) => {
