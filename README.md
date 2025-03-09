@@ -57,7 +57,7 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## I want to try them without installing anything
 
-You can try this hook just sending 10 XAH (or 100 XAH) to the following account on Xahau JSHooks Testnet and wait until 9 more players enter the game and see who wins. You can do it by sending 10 XAH from one or several accounts using the JSHooksBuilder: 
+You can try this hook just sending 10 XAH (or 100 XAH) to the following account on Xahau JSHooks Testnet and wait until 9 more players enter the game and see who wins. You can do it using several testnet accounts in JSHooksBuilder: 
 
 https://jshooks-builder.xahau.network/develop 
 
