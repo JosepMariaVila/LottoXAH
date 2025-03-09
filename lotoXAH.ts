@@ -2,7 +2,8 @@
 import {sfAccount, sfDestination} from "sfcodes.ts";
 import {ttPAYMENT, ttINVOKE} from "tts.ts";
 
-export const Hook = () => {
+//export const Hook = () => {
+export const Hook: Hook = (tx) => {
 
     // Create a reserve for 1 outgoing transaction
     etxn_reserve(1)
