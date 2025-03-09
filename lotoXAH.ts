@@ -6,8 +6,8 @@ const ttINVOKE = 99
 const sfAccount = 0x80001
 const sfDestination = 0x80003*/
 
-//export const Hook = () => {
-export const Hook: Hook = (tx) => {
+export const Hook = () => {
+//export const Hook: Hook = (tx) => {
 
     // Create a reserve for 1 outgoing transaction
     etxn_reserve(1)
