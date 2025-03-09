@@ -5,12 +5,12 @@
 
 ## Introduction
 
-Lotto XAH is a hook programmed in javascript for the Xahau JSHooks Testnet Network. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players. Each player sends 10 XAH to the hook and the winner gets the prize which consists in all the amounts combined: 100 XAH.
+Lotto XAH is a hook programmed in javascript for the Xahau JSHooks Testnet Network. A hook is a series of rules that enable smart logic in Xahau, the smart contracts of Xahau. Lotto XAH is a Hook that converts a Xahau account in an engine for a lottery game for 10 players. Each player sends 10 XAH (or 100 XAH) to the hook and the winner gets the prize which consists in all the amounts combined: 100 XAH (or 1000 XAH).
 
 
 ## Explanation
 
-The hook assigns an ordered number from 0 to 9 to each player that joins the lottery and stores its number and its address in the namespace. A player joins the lottery sending 10 XAH to the hook account. The hook uses the Ledger Index of the last player (Player 10) payment transaction to determine the winner: it considers the last digit of the Ledger_Index field of the payment transaction, which is a number from 0 to 9, and that number determines the winner:
+The hook assigns an ordered number from 0 to 9 to each player that joins the lottery and stores its number and its address in the namespace. A player joins the lottery sending 10 XAH (or 100 XAH) to the hook account. The hook uses the Ledger Index of the last player (Player 10) payment transaction to determine the winner: it considers the last digit of the Ledger_Index field of the payment transaction, which is a number from 0 to 9, and that number determines the winner:
 
 If Player 10 Ledger_Index last digit is 0, then Player 1, which has assigned number 0, wins.
 
@@ -32,7 +32,7 @@ If Player 10 Ledger_Index last digit is 8, then Player 9, which has assigned num
 
 If Player 10 Ledger_Index last digit is 9, then Player 10, which has assigned number 9, wins.
 
-The hook blocks any payment other than 10 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
+The hook blocks any payment other than 10 XAH (or 100 XAH). So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
 
 
 ## Installation & Usage
@@ -48,23 +48,29 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## How to install Lotto XAH Hook on Xahau JSHooks Testnet?
 
-- HookHash:                         F04B4C317EE69123518BA56BC796225836783854F9C24EBE03EA772A8FBC7C57
+- HookHash for 100 XAH prize hook:                         F04B4C317EE69123518BA56BC796225836783854F9C24EBE03EA772A8FBC7C57
+
+- HookHash for 1000 XAH prize hook:                         
 
 - You can install it using:         [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
    
 
 ## I want to try them without installing anything
 
-You can try this hook just sending 10 XAH to the following account on Xahau JSHooks Testnet and wait until 9 more players enter the game and see who wins. You can do it by sending 10 XAH from one or several accounts using the JSHooksBuilder: 
+You can try this hook just sending 10 XAH (or 100 XAH) to the following account on Xahau JSHooks Testnet and wait until 9 more players enter the game and see who wins. You can do it by sending 10 XAH from one or several accounts using the JSHooksBuilder: 
 
 https://jshooks-builder.xahau.network/develop 
 
-- JSHooks Testnet hook account:              rnY1MgmsuY4FEzLtdFc9wZQKWpRbcQkaG3
+- JSHooks Testnet 100 XAH prize hook account:              rnY1MgmsuY4FEzLtdFc9wZQKWpRbcQkaG3
   
-- JSHooks Testnet hook account explorer:     https://xahau-jshooks-testnet.xrplwin.com/account/rnY1MgmsuY4FEzLtdFc9wZQKWpRbcQkaG3
+- JSHooks Testnet 100 XAH prize hook account explorer:     https://xahau-jshooks-testnet.xrplwin.com/account/rnY1MgmsuY4FEzLtdFc9wZQKWpRbcQkaG3
+
+- JSHooks Testnet 1000 XAH prize hook account:              
+  
+- JSHooks Testnet 1000 XAH prize hook account explorer:   
 
 
-## Youtube video tutorial to see Lotto XAH Hook in action
+## Youtube video tutorial to see Lotto 100 XAH prize Hook in action
 
 https://youtu.be/xVdBsYzDfdM?si=InLocBeiYarM17-Q
 
