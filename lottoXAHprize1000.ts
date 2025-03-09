@@ -209,7 +209,7 @@ export const Hook = () => {
          const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p1address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -219,7 +219,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p2address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -229,7 +229,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p3address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -239,7 +239,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p4address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -249,7 +249,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p5address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
          const emit_result01=emit(prepared_txn)
     }
@@ -259,7 +259,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p6address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -269,7 +269,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p7address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -279,7 +279,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p8address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -289,7 +289,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(p9address_ns),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
         const emit_result01=emit(prepared_txn)
     }
@@ -299,7 +299,7 @@ export const Hook = () => {
         const prepared_txn = prepare({
             TransactionType: "Payment",
             Destination: util_raddr(sender),
-            Amount: parseFloat(drops_sent)*100
+            Amount: parseFloat(drops_sent)*10
         })
             const emit_result01=emit(prepared_txn)
     }
