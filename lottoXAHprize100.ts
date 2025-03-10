@@ -140,43 +140,43 @@ export const Hook = () => {
         state_set(sender, player1address)
         accept("LOTTO XAH: Saving Player 1. Player 1 has position number 0. If Player 10 Ledger Index last digit is the number 0, then you win 100 XAH!", 5)
     }
-    // I check: if no previous records of player in the namespace "(p2address_ns.length != 20); if there is a second payment from different account than first player (!players_equal1), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p2address_ns.length != 20); if there is a second payment from different account than first player (!players_equal1), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p2address_ns.length != 20 && p1address_ns.length == 20 && !players_equal1 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder1, player2order)
         state_set(sender, player2address)
         accept("LOTTO XAH: Saving Player 2. Player 2 has position number 1. If Player 10 Ledger Index last digit is the number 1, then you win 100 XAH!", 6)
     }
-    // I check: if no previous records of player in the namespace "(p3address_ns.length != 20); if there is a third payment from different account than previous ones (!players_equal1,...-2), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p3address_ns.length != 20); if there is a third payment from different account than previous ones (!players_equal1,...-2), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p3address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && !players_equal1 && !players_equal2 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder2, player3order)
         state_set(sender, player3address)
         accept("LOTTO XAH: Saving Player 3. Player 3 has position number 2. If Player 10 Ledger Index last digit is the number 2, then you win 100 XAH!", 7)
     }
-    // I check: if no previous records of player in the namespace "(p4address_ns.length != 20); if there is a fourth payment from different account than previous ones (!players_equal1,...-2,...-3), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p4address_ns.length != 20); if there is a fourth payment from different account than previous ones (!players_equal1,...-2,...-3), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p4address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder3, player4order)
         state_set(sender, player4address)
         accept("LOTTO XAH: Saving Player 4. Player 4 has position number 3. If Player 10 Ledger Index last digit is the number 3, then you win 100 XAH!", 8)
     }
-    // I check: if no previous records of player in the namespace "(p5address_ns.length != 20); if there is a fifth payment from different account than previous ones (!players_equal1,...-2,...-3,...-4), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p5address_ns.length != 20); if there is a fifth payment from different account than previous ones (!players_equal1,...-2,...-3,...-4), if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p5address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && p4address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && !players_equal4 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder4, player5order)
         state_set(sender, player5address)
         accept("LOTTO XAH: Saving Player 5. Player 5 has position number 4. If Player 10 Ledger Index last digit is the number 4, then you win 100 XAH!", 9)
     }
-    // I check: if no previous records of player in the namespace "(p6address_ns.length != 20); if there is a sixth payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p6address_ns.length != 20); if there is a sixth payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p6address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && p4address_ns.length == 20 && p5address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && !players_equal4 && !players_equal5 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder5, player6order)
         state_set(sender, player6address)
         accept("LOTTO XAH: Saving Player 6. Player 6 has position number 5. If Player 10 Ledger Index last digit is the number 5, then you win 100 XAH!", 10)
     }
-    // I check: if no previous records of player in the namespace "(p7address_ns.length != 20); if there is a seventh payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5,...-6), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p7address_ns.length != 20); if there is a seventh payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5,...-6), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p7address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && p4address_ns.length == 20 && p5address_ns.length == 20 && p6address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && !players_equal4 && !players_equal5 && !players_equal6 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder6, player7order)
         state_set(sender, player7address)
         accept("LOTTO XAH: Saving Player 7. Player 7 has position number 6. If Player 10 Ledger Index last digit is the number 6, then you win 100 XAH!", 11)
     }
-    // I check: if no previous records of player in the namespace "(p8address_ns.length != 20); if there is a eight payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5,...-6,...-7), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p8address_ns.length != 20); if there is a eight payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5,...-6,...-7), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p8address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && p4address_ns.length == 20 && p5address_ns.length == 20 && p6address_ns.length == 20 && p7address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && !players_equal4 && !players_equal5 && !players_equal6 && !players_equal7 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder7, player8order)
         state_set(sender, player8address)
@@ -188,7 +188,7 @@ export const Hook = () => {
         state_set(sender, player9address)
         accept("LOTTO XAH: Saving Player 9. Player 9 has position number 8. If Player 10 Ledger Index last digit is the number 8, then you win 100 XAH!", 13)
     }
-    // I check: if no previous records of player in the namespace "(p10address_ns.length != 20); if there is a tenth payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5,...-6,...-7,...-8,...-9), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
+    // I check: if there is an incoming payment from another account (equal=1), if no previous records of player in the namespace "(p10address_ns.length != 20); if there is a tenth payment from different account than previous ones (!players_equal1,...-2,...-3,...-4,...-5,...-6,...-7,...-8,...-9), if it's not one of the previous players, if its a payment tt==00 or tt==ttPAYMENT and if 10 XAH was sent ( drops_sent==10000000)
     if (equal && p10address_ns.length != 20 && p1address_ns.length == 20 && p2address_ns.length == 20 && p3address_ns.length == 20 && p4address_ns.length == 20 && p5address_ns.length == 20 && p6address_ns.length == 20 && p7address_ns.length == 20 && p8address_ns.length == 20 && p9address_ns.length == 20 && !players_equal1 && !players_equal2 && !players_equal3 && !players_equal4 && !players_equal5 && !players_equal6 && !players_equal7 && !players_equal8 && !players_equal9 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder9, player10order)
         state_set(sender, player10address)
