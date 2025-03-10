@@ -134,7 +134,7 @@ export const Hook = () => {
         rollback("LOTTO XAH: Not accepting this transaction. You should send exactly 10 XAH, not more, not less.", 4);
     }
     
-    // If first player payment goes right, to check that, you need an incoming payment from another account (equal=1), it has to be a payment (tt==ttPAYMENT or tt==0), the amount has to be 10 XAH (drops_sent==10000000) and be the first player to enter to the game, no previous records of player in the namespace p1address_ns.length != 20
+    // We check: 1) If first player payment goes right, to check that, you need an incoming payment from another account (equal=1); 2) If it is the first player to enter to the game, so no previous records of player in the namespace p1address_ns.length != 20; 3) If it is a payment (tt==ttPAYMENT or tt==0); 4) If the amount is 10 XAH (drops_sent==10000000) 
     if (equal && p1address_ns.length != 20 && tt==ttPAYMENT && drops_sent==10000000) {
         state_set(numberOrder0, player1order)
         state_set(sender, player1address)
